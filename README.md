@@ -1,7 +1,7 @@
 # 🌿 EnergiAVerde — Transición Energética Justa
 
 > Aplicativo web interactivo para explorar datos globales de energías renovables (1965–2022).  
-> Proyecto individual — Bootcamp de Programación MinTIC Colombia 2025
+> Proyecto individual — Bootcamp de Programación MinTIC Colombia 2026
 
 ---
 
@@ -137,4 +137,4 @@ Fuente: [Kaggle — belayethossainds](https://www.kaggle.com/datasets/belayethos
 
 - **Plataforma:** Moodle — Bootcamp MinTIC Colombia
 - **Formato:** Repositorio GitHub
-- **Año:** 2025
+- **Año:** 2026
