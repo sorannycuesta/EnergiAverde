@@ -1,0 +1,43 @@
+/* ═══════════════════════════════════════════════
+   dashboard.css — EnergiAVerde / Dashboard
+   Estilos del dashboard de visualización (Nivel 3):
+   barra de herramientas, grilla de gráficas y tarjetas
+═══════════════════════════════════════════════ */
+
+#dashboard { background: var(--surface); }
+
+/* ── Barra de herramientas (selector de entidad) ── */
+.dash-toolbar {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  align-items: flex-end;
+}
+
+/* ── Grilla de 4 gráficas ── */
+.charts-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+@media (max-width: 760px) {
+  .charts-grid { grid-template-columns: 1fr; }
+}
+
+/* ── Tarjeta de cada gráfica ── */
+.chart-card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  transition: border-color 0.2s;
+}
+.chart-card:hover { border-color: var(--border2); }
+
+.chart-card-header          { margin-bottom: 1rem; }
+.chart-card-header h3       { font-size: 0.9rem; color: var(--text); margin-bottom: 0.15rem; }
+.chart-card-header p        { font-size: 0.75rem; color: var(--muted); margin: 0; }
+
+/* ── Contenedor del canvas (altura fija para Chart.js) ── */
+.chart-canvas-wrap { position: relative; height: 240px; }

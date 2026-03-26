@@ -1,0 +1,9 @@
+/* ═══════════════════════════════════════════════
+   grafico-torta.css — EnergiAVerde
+   Estilos específicos del gráfico de dona/torta
+═══════════════════════════════════════════════ */
+
+/* Centra verticalmente la leyenda del gráfico de dona */
+#chartPie {
+  margin: 0 auto;
+}

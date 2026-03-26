@@ -1,0 +1,10 @@
+/* ═══════════════════════════════════════════════
+   grafico-lineas.css — EnergiAVerde
+   Estilos específicos del gráfico de líneas
+   (tendencia de capacidad instalada)
+═══════════════════════════════════════════════ */
+
+/* Asegurar que el canvas de líneas ocupe todo el alto disponible */
+#chartLine {
+  width: 100% !important;
+}

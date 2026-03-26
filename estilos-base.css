@@ -1,0 +1,150 @@
+/* ═══════════════════════════════════════════════
+   estilos-base.css — EnergiAVerde
+   Variables globales, reset, tipografía y
+   componentes compartidos por todas las secciones.
+   Este archivo debe cargarse PRIMERO.
+═══════════════════════════════════════════════ */
+
+/* ── Variables de diseño ── */
+:root {
+  --bg:         #080d08;
+  --surface:    #0f180f;
+  --surface2:   #162016;
+  --surface3:   #1e2e1e;
+  --green:      #4ade80;
+  --green-dim:  #22c55e;
+  --green-dark: #166534;
+  --amber:      #fbbf24;
+  --teal:       #2dd4bf;
+  --sky:        #38bdf8;
+  --red:        #f87171;
+  --muted:      #657065;
+  --text:       #e4ede4;
+  --text-dim:   #96a896;
+  --border:     #1e2e1e;
+  --border2:    #253525;
+  --radius:     14px;
+  --radius-sm:  8px;
+  --shadow:     0 4px 24px rgba(0,0,0,0.4);
+}
+
+/* ── Reset ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 16px; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 400;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+a { color: var(--green); text-decoration: none; }
+a:hover { text-decoration: underline; }
+img { max-width: 100%; display: block; }
+strong { color: var(--text); }
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar       { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--border2); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--muted); }
+
+/* ── Tipografía ── */
+h1, h2, h3, h4, h5 {
+  font-family: 'Syne', sans-serif;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+h1 { font-size: clamp(2.4rem, 6vw, 4.2rem); font-weight: 800; }
+h2 { font-size: clamp(1.7rem, 4vw, 2.6rem); font-weight: 800; }
+h3 { font-size: 1.2rem; font-weight: 700; }
+p  { color: var(--text-dim); margin-bottom: 1rem; }
+
+/* ── Layout ── */
+.container  { max-width: 1140px; margin: 0 auto; padding: 0 1.5rem; }
+section     { padding: 5rem 1.5rem; }
+.divider    { border: none; border-top: 1px solid var(--border); }
+
+/* ── Botones ── */
+.btn {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  padding: 0.7rem 1.6rem; border-radius: 999px;
+  font-family: 'DM Sans', sans-serif; font-weight: 500;
+  font-size: 0.9rem; cursor: pointer;
+  transition: all 0.2s ease; border: none; white-space: nowrap;
+  text-decoration: none;
+}
+.btn-primary { background: var(--green); color: #080d08; }
+.btn-primary:hover {
+  background: #6ee89a; transform: translateY(-1px);
+  box-shadow: 0 4px 20px rgba(74,222,128,0.3); text-decoration: none;
+}
+.btn-outline { background: transparent; color: var(--text-dim); border: 1px solid var(--border2); }
+.btn-outline:hover { border-color: var(--green); color: var(--green); text-decoration: none; }
+.btn-sm { padding: 0.45rem 1rem; font-size: 0.82rem; }
+
+/* ── Chips / etiquetas ── */
+.chip {
+  display: inline-block; padding: 0.22rem 0.65rem;
+  background: rgba(74,222,128,0.1); border: 1px solid rgba(74,222,128,0.2);
+  border-radius: 999px; font-size: 0.72rem; color: var(--green);
+  font-weight: 500; margin: 0.2rem;
+}
+.chip.amber { background: rgba(251,191,36,0.1);  border-color: rgba(251,191,36,0.2);  color: var(--amber); }
+.chip.teal  { background: rgba(45,212,191,0.1);  border-color: rgba(45,212,191,0.2);  color: var(--teal);  }
+.chip.sky   { background: rgba(56,189,248,0.1);  border-color: rgba(56,189,248,0.2);  color: var(--sky);   }
+
+/* ── Tarjeta base ── */
+.card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 1.5rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.card:hover { border-color: var(--border2); box-shadow: var(--shadow); }
+
+/* ── Encabezados de sección ── */
+.section-tag {
+  display: block; font-size: 0.72rem; font-weight: 500;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--green); margin-bottom: 0.4rem;
+}
+.section-intro           { max-width: 600px; margin-bottom: 2.5rem; }
+.section-intro p         { font-size: 1.05rem; }
+
+/* ── Caja de aviso ── */
+.notice {
+  background: rgba(74,222,128,0.05);
+  border: 1px solid rgba(74,222,128,0.18);
+  border-radius: var(--radius-sm); padding: 1rem 1.25rem;
+  font-size: 0.85rem; color: var(--text-dim); margin-bottom: 1.5rem;
+}
+.notice strong { color: var(--green); }
+
+/* ── Inputs y selects (compartidos) ── */
+select, input[type="number"], input[type="text"] {
+  background: var(--surface2); border: 1px solid var(--border2);
+  color: var(--text); border-radius: var(--radius-sm);
+  padding: 0.5rem 0.8rem; font-family: 'DM Sans', sans-serif;
+  font-size: 0.86rem; outline: none; transition: border-color 0.2s;
+}
+select:focus, input:focus { border-color: var(--green); }
+select option             { background: var(--surface2); }
+
+/* ── Footer ── */
+footer {
+  background: var(--surface); border-top: 1px solid var(--border);
+  padding: 2.5rem 1.5rem; text-align: center;
+}
+.footer-logo {
+  font-family: 'Syne', sans-serif; font-weight: 800;
+  font-size: 1.25rem; letter-spacing: -0.04em;
+  color: var(--green); margin-bottom: 0.5rem;
+}
+.footer-logo span  { color: var(--amber); }
+footer p           { font-size: 0.8rem; color: var(--muted); margin: 0.25rem 0; }
+.footer-links      { display: flex; gap: 1.5rem; justify-content: center; margin-top: 1rem; flex-wrap: wrap; }
+.footer-links a    { font-size: 0.8rem; color: var(--muted); }
+.footer-links a:hover { color: var(--green); }

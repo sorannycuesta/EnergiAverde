@@ -1,0 +1,20 @@
+/* ═══════════════════════════════════════════════
+   grafico-barras.css — EnergiAVerde
+   Estilos específicos del gráfico de barras
+   (los estilos base del chart-card están en dashboard.css)
+═══════════════════════════════════════════════ */
+
+/* El canvas del gráfico de barras tiene mayor altura en pantallas grandes */
+@media (min-width: 900px) {
+  #chartBar {
+    min-height: 220px;
+  }
+}
+
+/* Color de acento de la leyenda del gráfico de barras */
+.bar-legend-dot {
+  display: inline-block;
+  width: 10px; height: 10px;
+  border-radius: 2px;
+  margin-right: 4px;
+}

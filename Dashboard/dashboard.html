@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<!--
+  dashboard.html — EnergiAVerde / Dashboard
+  Sección Nivel 3: Dashboard de producción y consumo de energía renovable.
+  Se incluye como fragmento dentro de index.html.
+  Contiene los 4 canvas de Chart.js y el selector de entidad.
+-->
+
+<!-- ════════════════════════════════════════════
+     NIVEL 3 — DASHBOARD
+════════════════════════════════════════════ -->
+<section id="dashboard">
+  <div class="container">
+    <span class="section-tag">Nivel 3 — Dashboard de visualización</span>
+    <h2>Dashboard de <span style="color:var(--sky)">Producción y Consumo</span></h2>
+
+    <div class="section-intro">
+      <p>Visualización integral de la producción y consumo de energía renovable.
+         Filtra por país o región y actualiza las cuatro gráficas.</p>
+    </div>
+
+    <!-- Barra de herramientas -->
+    <div class="dash-toolbar">
+      <div class="fgroup">
+        <label>Región / País</label>
+        <select id="dashEntity" onchange="updateDashboard()">
+          <option value="World">World (Global)</option>
+        </select>
+      </div>
+      <div class="fgroup" style="margin-top:auto">
+        <button class="btn btn-outline btn-sm" onclick="loadDemoData()">
+          📂 Cargar datos demo
+        </button>
+      </div>
+    </div>
+
+    <!-- Grilla de 4 gráficas -->
+    <div class="charts-grid">
+
+      <!-- Gráfico 1: Barras -->
+      <div class="chart-card">
+        <div class="chart-card-header">
+          <h3>📊 Producción por Fuente Renovable</h3>
+          <p>Eólica, solar, hidro, biocomb. y geotérmica — último año disponible</p>
+        </div>
+        <div class="chart-canvas-wrap">
+          <canvas id="chartBar"></canvas>
+        </div>
+      </div>
+
+      <!-- Gráfico 2: Torta/Dona -->
+      <div class="chart-card">
+        <div class="chart-card-header">
+          <h3>🥧 Participación en el Mix Eléctrico</h3>
+          <p>Porcentaje de cada fuente renovable en la electricidad total</p>
+        </div>
+        <div class="chart-canvas-wrap">
+          <canvas id="chartPie"></canvas>
+        </div>
+      </div>
+
+      <!-- Gráfico 3: Líneas -->
+      <div class="chart-card">
+        <div class="chart-card-header">
+          <h3>📈 Tendencia de Capacidad Instalada</h3>
+          <p>Evolución histórica de eólica, solar PV y geotérmica (GW)</p>
+        </div>
+        <div class="chart-canvas-wrap">
+          <canvas id="chartLine"></canvas>
+        </div>
+      </div>
+
+      <!-- Gráfico 4: Área -->
+      <div class="chart-card">
+        <div class="chart-card-header">
+          <h3>🌊 Renovable vs Convencional</h3>
+          <p>Comparación del consumo energético a lo largo del tiempo (EJ)</p>
+        </div>
+        <div class="chart-canvas-wrap">
+          <canvas id="chartArea"></canvas>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

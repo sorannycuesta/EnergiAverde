@@ -1,0 +1,39 @@
+/* ═══════════════════════════════════════════════
+   feedback.css — EnergiAVerde / Feedback
+   Estilos de la sección de resultados esperados
+   y el CTA final
+═══════════════════════════════════════════════ */
+
+#resultados { background: var(--bg); }
+
+/* ── Grilla de tarjetas de resultados ── */
+.results-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.25rem;
+  margin-bottom: 3rem;
+}
+
+.result-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.75rem;
+  transition: border-color 0.2s;
+}
+.result-card:hover    { border-color: var(--green-dim); }
+.result-card .rc-icon { font-size: 2rem; margin-bottom: 0.75rem; }
+.result-card h3       { font-size: 1rem; color: var(--text); margin-bottom: 0.4rem; }
+.result-card p        { font-size: 0.84rem; margin: 0; }
+
+/* ── CTA final ── */
+.final-cta {
+  background: linear-gradient(135deg, #0f2010, #172515);
+  border: 1px solid var(--border2);
+  border-radius: var(--radius);
+  padding: 3rem;
+  text-align: center;
+}
+.final-cta h3     { font-size: 1.6rem; color: var(--text); margin-bottom: 0.75rem; }
+.final-cta p      { max-width: 500px; margin: 0 auto 1.75rem; }
+.final-cta-btns   { display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap; }

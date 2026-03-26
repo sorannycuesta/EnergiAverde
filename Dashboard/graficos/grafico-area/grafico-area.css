@@ -1,0 +1,11 @@
+/* ═══════════════════════════════════════════════
+   grafico-area.css — EnergiAVerde
+   Estilos específicos del gráfico de área
+   (renovable vs convencional)
+═══════════════════════════════════════════════ */
+
+/* El gráfico de área usa línea punteada para convencional —
+   Chart.js lo maneja vía borderDash, sin CSS adicional necesario */
+#chartArea {
+  width: 100% !important;
+}

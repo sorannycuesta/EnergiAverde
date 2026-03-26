@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<!--
+  calculadora.html — EnergiAVerde
+  Sección Nivel 2: Formulario de estimación de % energía renovable
+  Esta sección se incluye como fragmento dentro de index.html
+-->
+
+<!-- ════════════════════════════════════════════
+     NIVEL 2 — CALCULADORA
+════════════════════════════════════════════ -->
+<section id="calculadora">
+  <div class="container">
+    <span class="section-tag">Nivel 2 — Formulario interactivo</span>
+    <h2>Calculadora de <span style="color:var(--green)">Energía Renovable</span></h2>
+
+    <div class="section-intro">
+      <p>Ingresa tu consumo eléctrico mensual y descubre qué porcentaje proviene de fuentes renovables, según los datos históricos del dataset global.</p>
+    </div>
+
+    <div class="calc-layout">
+
+      <!-- Formulario de entrada -->
+      <div>
+        <div class="form-group">
+          <label for="inputConsumo">Consumo eléctrico total mensual (kWh)</label>
+          <input type="number" id="inputConsumo" placeholder="Ej: 250" min="0" oninput="calcular()">
+        </div>
+
+        <div class="form-group">
+          <label for="inputTipo">Tipo de usuario</label>
+          <select id="inputTipo" onchange="calcular()">
+            <option value="hogar">🏠 Hogar residencial</option>
+            <option value="pequena">🏢 Pequeña empresa</option>
+            <option value="comunidad">🏘️ Comunidad / Barrio</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="inputRegion">Región (factor de ajuste)</label>
+          <select id="inputRegion" onchange="calcular()">
+            <option value="1.0">🌍 Global promedio</option>
+            <option value="0.9">🇨🇴 Colombia (mix actual)</option>
+            <option value="1.15">🌎 América Latina</option>
+            <option value="1.3">🇪🇺 Europa Occidental</option>
+            <option value="0.7">🌏 Asia en desarrollo</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="inputAnio">Año de referencia (datos del dataset)</label>
+          <select id="inputAnio" onchange="calcular()">
+            <option value="2022">2022 — más reciente</option>
+            <option value="2020">2020</option>
+            <option value="2015">2015</option>
+            <option value="2010">2010</option>
+            <option value="2000">2000</option>
+          </select>
+        </div>
+
+        <div class="notice">
+          <strong>Metodología:</strong> Se usa la proporción global de energía renovable por fuente
+          del dataset (share-electricity-*) para estimar qué fracción de tu consumo proviene de
+          fuentes limpias, ajustada por región y año.
+        </div>
+      </div>
+
+      <!-- Panel de resultado -->
+      <div class="result-panel">
+
+        <!-- Estado vacío -->
+        <div id="calcEmpty" class="result-empty"
+             style="display:flex; flex-direction:column; align-items:center; gap:0.5rem">
+          <span style="font-size:2.5rem">⚡</span>
+          <span>Ingresa tu consumo para ver el resultado</span>
+        </div>
+
+        <!-- Estado con resultado -->
+        <div id="calcResult" style="display:none; flex-direction:column; align-items:center; width:100%">
+
+          <!-- Anillo SVG -->
+          <div class="ring-container">
+            <svg viewBox="0 0 120 120" width="140" height="140">
+              <circle class="ring-bg"   cx="60" cy="60" r="55"/>
+              <circle class="ring-fill" id="ringFill" cx="60" cy="60" r="55"
+                stroke-dasharray="346" stroke-dashoffset="346"/>
+            </svg>
+            <div class="ring-center">
+              <span class="ring-pct"  id="ringPct">0%</span>
+              <span class="ring-unit" id="ringUnit">renovable</span>
+            </div>
+          </div>
+
+          <p class="result-summary" id="calcSummary"></p>
+
+          <div class="breakdown" id="breakdownRows"></div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>

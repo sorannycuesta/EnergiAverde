@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="EnergiAVerde — Aplicativo web de Transición Energética Justa. Datos globales de energías renovables 1965–2022. Bootcamp MinTIC Colombia 2025.">
+  <title>EnergiAVerde — Transición Energética Justa</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+
+  <!-- ── ESTILOS — orden de carga importante ── -->
+  <!-- 1. Base global (variables, reset, componentes compartidos) -->
+  <link rel="stylesheet" href="estilos-base.css">
+
+  <!-- 2. Módulos por sección -->
+  <link rel="stylesheet" href="Navegador/navegador.css">
+  <link rel="stylesheet" href="Inicio/inicio.css">
+  <link rel="stylesheet" href="Calculadora/calculadora.css">
+  <link rel="stylesheet" href="Dashboard/tabla/tabla.css">
+  <link rel="stylesheet" href="Dashboard/dashboard.css">
+  <link rel="stylesheet" href="Dashboard/graficos/grafico-barras/grafico-barras.css">
+  <link rel="stylesheet" href="Dashboard/graficos/grafico-torta/grafico-torta.css">
+  <link rel="stylesheet" href="Dashboard/graficos/grafico-lineas/grafico-lineas.css">
+  <link rel="stylesheet" href="Dashboard/graficos/grafico-area/grafico-area.css">
+  <link rel="stylesheet" href="Feedback/feedback.css">
+</head>
+<body>
+
+<!-- ════════════════════════════════════════════
+     NAVEGACIÓN
+════════════════════════════════════════════ -->
+<nav id="navbar">
+  <div class="nav-logo">Energi<span>A</span>Verde</div>
+
+  <button class="nav-hamburger" id="navHamburger" aria-label="Menú">☰</button>
+
+  <div class="nav-links" id="navLinks">
+    <a href="#portada">Inicio</a>
+    <a href="#introduccion">Introducción</a>
+    <a href="#energia">Energía Solar</a>
+    <a href="#datos">Datos</a>
+    <a href="#calculadora">Calculadora</a>
+    <a href="#dashboard">Dashboard</a>
+    <a href="#resultados">Resultados</a>
+  </div>
+</nav>
+
+
+<!-- ════════════════════════════════════════════
+     PORTADA
+════════════════════════════════════════════ -->
+<section id="portada">
+  <div class="hero-bg-grid"></div>
+  <div class="hero-bg-glow"></div>
+
+  <div class="hero-content">
+    <div class="hero-badge">Bootcamp MinTIC Colombia · 2026</div>
+
+    <h1>
+      Transición<br>
+      <span class="accent">Energética</span><br>
+      <span class="accent2">Justa</span>
+    </h1>
+
+    <p class="hero-sub">
+      Explora 57 años de datos globales sobre energías renovables. Calcula tu huella
+      verde, visualiza tendencias y comprende la urgencia del cambio energético.
+    </p>
+
+    <div class="hero-cta">
+      <a href="#introduccion" class="btn btn-primary">☀️ Explorar proyecto</a>
+      <a href="#dashboard"    class="btn btn-outline">📊 Ver dashboard</a>
+    </div>
+
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <span class="val">29.9%</span>
+        <span class="lbl">Electricidad renovable global 2022</span>
+      </div>
+      <div class="hero-stat">
+        <span class="val">57 años</span>
+        <span class="lbl">Dataset histórico (1965–2022)</span>
+      </div>
+      <div class="hero-stat">
+        <span class="val">5 fuentes</span>
+        <span class="lbl">Solar · Eólica · Hidro · Geo · Bio</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+
+<!-- ════════════════════════════════════════════
+     INTRODUCCIÓN
+════════════════════════════════════════════ -->
+<section id="introduccion">
+  <div class="container">
+    <span class="section-tag">Introducción al proyecto</span>
+    <h2>¿Por qué este <span style="color:var(--green)">proyecto</span>?</h2>
+
+    <div class="intro-grid">
+      <div class="intro-text">
+        <p>
+          En la era digital actual, la capacidad de programar se ha convertido en una habilidad
+          fundamental tanto para el desarrollo personal como para el progreso económico y social
+          de un país. En Colombia, la implementación de un programa de formación en programación
+          básica se justifica por la <strong>democratización del conocimiento tecnológico</strong>,
+          el fomento del pensamiento computacional y la preparación para el futuro del trabajo.
+        </p>
+        <p>
+          Desde la Revolución Industrial, la mayoría de los países han dependido de los combustibles
+          fósiles, contribuyendo al incremento de emisiones de CO₂ y la contaminación del aire.
+          La energía renovable será fundamental para la
+          <strong>descarbonización de los sistemas energéticos</strong> en las próximas décadas.
+        </p>
+        <p>
+          Este proyecto usa la programación como herramienta para
+          <strong>visualizar, analizar y divulgar datos reales</strong> sobre la producción y el
+          consumo de energías renovables a nivel mundial, contribuyendo a la comprensión de la
+          transición energética justa que Colombia y el mundo necesitan.
+        </p>
+
+        <div style="margin-top:1.5rem">
+          <span class="chip">Línea: Transición Energética Justa</span>
+          <span class="chip amber">Dataset: 1965–2022</span>
+          <span class="chip teal">Tecnologías: HTML · CSS · JavaScript</span>
+        </div>
+      </div>
+
+      <div class="intro-pillars">
+        <div class="pillar">
+          <div class="pillar-icon">💡</div>
+          <div>
+            <h3>Democratización tecnológica</h3>
+            <p>Acercar los datos de energía renovable a ciudadanos, hogares y comunidades
+               mediante una interfaz web accesible e intuitiva.</p>
+          </div>
+        </div>
+        <div class="pillar">
+          <div class="pillar-icon">🌍</div>
+          <div>
+            <h3>Urgencia climática</h3>
+            <p>Visibilizar con datos reales la aceleración de las energías limpias y el
+               camino que falta para descarbonizar la economía global.</p>
+          </div>
+        </div>
+        <div class="pillar">
+          <div class="pillar-icon">🇨🇴</div>
+          <div>
+            <h3>Colombia en la transición</h3>
+            <p>Mostrar el potencial de Colombia (67%+ de electricidad hidroeléctrica, enorme
+               recurso solar y eólico) como líder regional en energías limpias.</p>
+          </div>
+        </div>
+        <div class="pillar">
+          <div class="pillar-icon">👩‍💻</div>
+          <div>
+            <h3>Programación con propósito</h3>
+            <p>Demostrar que HTML, CSS y JavaScript son herramientas suficientes para
+               construir aplicaciones web con impacto social y ambiental real.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+
+<!-- ════════════════════════════════════════════
+     NIVEL 1 — ENERGÍA SOLAR
+════════════════════════════════════════════ -->
+<section id="energia">
+  <div class="container">
+    <span class="section-tag">Nivel 1 — Fuente de energía limpia</span>
+    <h2>Energía <span style="color:var(--amber)">Solar</span></h2>
+
+    <div class="section-intro">
+      <p>La energía solar es la fuente renovable de crecimiento más rápido en la historia.
+         Comprende cómo funciona y por qué es clave para la transición energética.</p>
+    </div>
+
+    <!-- Visual animado + explicación -->
+    <div class="energy-hero-grid">
+      <div class="solar-visual">
+        <div class="sv-rays"></div>
+        <div class="sv-sun"></div>
+        <div class="sv-panels">
+          <div class="sv-panel"></div>
+          <div class="sv-panel"></div>
+          <div class="sv-panel"></div>
+          <div class="sv-panel"></div>
+        </div>
+      </div>
+
+      <div>
+        <h3 style="font-size:1.4rem; margin-bottom:1rem; color:var(--text)">¿Cómo funciona?</h3>
+        <p>Los paneles fotovoltaicos (PV) convierten la luz solar en electricidad mediante el
+           <strong>efecto fotoeléctrico</strong>: los fotones liberan electrones de las células
+           de silicio, generando una corriente que se convierte en electricidad alterna para
+           hogares e industrias.</p>
+        <p>La capacidad solar instalada creció de <strong style="color:var(--amber)">1.4 GW en
+           2000</strong> a más de <strong style="color:var(--amber)">1,050 GW en 2022</strong>,
+           con una reducción de costos superior al 90%.</p>
+        <p>Colombia cuenta con una irradiación promedio de
+           <strong style="color:var(--amber)">4.5 kWh/m²/día</strong>, con potencial excepcional
+           en La Guajira y la Costa Caribe para proyectos de gran escala.</p>
+        <div style="margin-top:1rem">
+          <span class="chip">Fotovoltaica (PV)</span>
+          <span class="chip">Termosolar (CSP)</span>
+          <span class="chip amber">0 emisiones CO₂</span>
+          <span class="chip teal">Costo -90% desde 2010</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Facts -->
+    <div class="facts-grid">
+      <div class="fact-card">
+        <div class="fact-icon">☀️</div>
+        <h3>Recurso inagotable</h3>
+        <p>El sol irradia 173,000 TW sobre la Tierra, lo que equivale a 10,000 veces la
+           demanda energética mundial actual.</p>
+      </div>
+      <div class="fact-card">
+        <div class="fact-icon">📉</div>
+        <h3>Costo más bajo de la historia</h3>
+        <p>La electricidad solar supera ya al carbón y gas en competitividad. En proyectos
+           utility-scale llega a 0.02 USD/kWh.</p>
+      </div>
+      <div class="fact-card">
+        <div class="fact-icon">🏘️</div>
+        <h3>Solar distribuida</h3>
+        <p>Más de 100 millones de hogares en el mundo generan su propia electricidad solar,
+           reduciendo facturas y emisiones.</p>
+      </div>
+      <div class="fact-card">
+        <div class="fact-icon">🇨🇴</div>
+        <h3>Potencial en Colombia</h3>
+        <p>La Guajira concentra los mejores recursos solares del país. Proyectos como El Paso
+           y Guajira 1 están transformando la matriz energética nacional.</p>
+      </div>
+    </div>
+
+    <!-- Selector de las 5 fuentes -->
+    <h3 style="margin-bottom:1rem; color:var(--text)">Explora las 5 fuentes renovables del dataset</h3>
+    <div class="types-grid" id="typesGrid">
+      <button class="type-btn active" data-type="solar">
+        <span class="emoji">☀️</span><div class="name">Solar</div>
+      </button>
+      <button class="type-btn" data-type="wind">
+        <span class="emoji">💨</span><div class="name">Eólica</div>
+      </button>
+      <button class="type-btn" data-type="hydro">
+        <span class="emoji">💧</span><div class="name">Hidroeléctrica</div>
+      </button>
+      <button class="type-btn" data-type="geo">
+        <span class="emoji">🌋</span><div class="name">Geotérmica</div>
+      </button>
+      <button class="type-btn" data-type="bio">
+        <span class="emoji">🌿</span><div class="name">Biocombustibles</div>
+      </button>
+    </div>
+
+    <!-- Panel de detalle de la fuente seleccionada -->
+    <div class="type-detail" id="typeDetail">
+      <h3 id="detailTitle">☀️ Energía Solar</h3>
+      <p id="detailDesc" style="margin-top:0.5rem">
+        Los paneles fotovoltaicos convierten la luz solar en electricidad mediante el efecto
+        fotoeléctrico. Es la tecnología renovable de mayor crecimiento. Colombia tiene un
+        potencial enorme, especialmente en la Guajira.
+      </p>
+      <div id="detailTags" style="margin-top:0.75rem">
+        <span class="chip amber">Cap. instalada global: 1,050+ GW</span>
+        <span class="chip">Costo -90% desde 2010</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+
+<!-- ════════════════════════════════════════════
+     NIVEL 2 — DATOS (CSV + Tabla)
+════════════════════════════════════════════ -->
+<section id="datos">
+  <div class="container">
+    <span class="section-tag">Nivel 2 — Visualización de datos</span>
+    <h2>Dataset Histórico <span style="color:var(--teal)">Global</span></h2>
+
+    <div class="section-intro">
+      <p>Carga el CSV del dataset de Kaggle o usa los datos de demostración para explorar
+         la tabla interactiva con filtros.</p>
+    </div>
+
+    <div class="notice">
+      <strong>💾 Fuente oficial:</strong> "Renewable Energy World Wide 1965–2022" —
+      <a href="https://www.kaggle.com/datasets/belayethossainds/renewable-energy-world-wide-19652022"
+         target="_blank" rel="noopener">Descargar desde Kaggle</a>
+      · También disponible en la carpeta <code>data/</code> del proyecto.
+    </div>
+
+    <div class="upload-zone" id="uploadZone">
+      <input type="file" id="csvFile" accept=".csv">
+      <div class="upload-icon">📂</div>
+      <h3>Cargar archivo CSV</h3>
+      <p>Arrastra aquí el archivo o haz clic para seleccionarlo</p>
+      <button class="btn btn-primary btn-sm" id="demoDataBtn"
+              onclick="event.stopPropagation(); loadDemoData()">
+        ✨ Usar datos de demostración
+      </button>
+    </div>
+
+    <div id="tableSection" style="display:none">
+      <div id="datosLoaded" style="display:none" class="notice">
+        ✅ <strong>Datos cargados.</strong> Puedes filtrar, buscar y exportar la tabla.
+      </div>
+
+      <div class="filters-bar">
+        <div class="fgroup">
+          <label>País / Región</label>
+          <select id="filterEntity" onchange="applyFilters()">
+            <option value="">Todos los países</option>
+          </select>
+        </div>
+        <div class="fgroup">
+          <label>Año desde</label>
+          <input type="number" id="filterYearFrom" placeholder="1965"
+                 min="1965" max="2022" style="width:90px" oninput="applyFilters()">
+        </div>
+        <div class="fgroup">
+          <label>Año hasta</label>
+          <input type="number" id="filterYearTo" placeholder="2022"
+                 min="1965" max="2022" style="width:90px" oninput="applyFilters()">
+        </div>
+        <div class="fgroup">
+          <label>Buscar texto</label>
+          <input type="text" id="filterSearch" placeholder="Ej: Colombia"
+                 style="width:150px" oninput="applyFilters()">
+        </div>
+        <div class="fgroup" style="margin-top:auto">
+          <button class="btn btn-outline btn-sm" onclick="applyFilters()">🔍 Filtrar</button>
+        </div>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead id="tableHead"></thead>
+          <tbody id="tableBody"></tbody>
+        </table>
+      </div>
+
+      <div class="table-footer">
+        <span id="tableCount"></span>
+        <button class="btn btn-outline btn-sm" onclick="exportCSV()">⬇ Exportar CSV filtrado</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+
+<!-- ════════════════════════════════════════════
+     NIVEL 2 — CALCULADORA
+════════════════════════════════════════════ -->
+<section id="calculadora">
+  <div class="container">
+    <span class="section-tag">Nivel 2 — Formulario interactivo</span>
+    <h2>Calculadora de <span style="color:var(--green)">Energía Renovable</span></h2>
+
+    <div class="section-intro">
+      <p>Ingresa tu consumo eléctrico mensual y descubre qué porcentaje proviene de fuentes
+         renovables, según los datos históricos del dataset global.</p>
+    </div>
+
+    <div class="calc-layout">
+      <div>
+        <div class="form-group">
+          <label for="inputConsumo">Consumo eléctrico total mensual (kWh)</label>
+          <input type="number" id="inputConsumo" placeholder="Ej: 250" min="0" oninput="calcular()">
+        </div>
+        <div class="form-group">
+          <label for="inputTipo">Tipo de usuario</label>
+          <select id="inputTipo" onchange="calcular()">
+            <option value="hogar">🏠 Hogar residencial</option>
+            <option value="pequena">🏢 Pequeña empresa</option>
+            <option value="comunidad">🏘️ Comunidad / Barrio</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="inputRegion">Región (factor de ajuste)</label>
+          <select id="inputRegion" onchange="calcular()">
+            <option value="1.0">🌍 Global promedio</option>
+            <option value="0.9">🇨🇴 Colombia (mix actual)</option>
+            <option value="1.15">🌎 América Latina</option>
+            <option value="1.3">🇪🇺 Europa Occidental</option>
+            <option value="0.7">🌏 Asia en desarrollo</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="inputAnio">Año de referencia (datos del dataset)</label>
+          <select id="inputAnio" onchange="calcular()">
+            <option value="2022">2022 — más reciente</option>
+            <option value="2020">2020</option>
+            <option value="2015">2015</option>
+            <option value="2010">2010</option>
+            <option value="2000">2000</option>
+          </select>
+        </div>
+        <div class="notice">
+          <strong>Metodología:</strong> Se usa la proporción global de energía renovable por
+          fuente del dataset (share-electricity-*) para estimar qué fracción de tu consumo
+          proviene de fuentes limpias, ajustada por región y año.
+        </div>
+      </div>
+
+      <div class="result-panel">
+        <div id="calcEmpty" class="result-empty"
+             style="display:flex; flex-direction:column; align-items:center; gap:0.5rem">
+          <span style="font-size:2.5rem">⚡</span>
+          <span>Ingresa tu consumo para ver el resultado</span>
+        </div>
+        <div id="calcResult"
+             style="display:none; flex-direction:column; align-items:center; width:100%">
+          <div class="ring-container">
+            <svg viewBox="0 0 120 120" width="140" height="140">
+              <circle class="ring-bg"   cx="60" cy="60" r="55"/>
+              <circle class="ring-fill" id="ringFill" cx="60" cy="60" r="55"
+                stroke-dasharray="346" stroke-dashoffset="346"/>
+            </svg>
+            <div class="ring-center">
+              <span class="ring-pct"  id="ringPct">0%</span>
+              <span class="ring-unit" id="ringUnit">renovable</span>
+            </div>
+          </div>
+          <p class="result-summary" id="calcSummary"></p>
+          <div class="breakdown" id="breakdownRows"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+
+<!-- ════════════════════════════════════════════
+     NIVEL 3 — DASHBOARD
+════════════════════════════════════════════ -->
+<section id="dashboard">
+  <div class="container">
+    <span class="section-tag">Nivel 3 — Dashboard de visualización</span>
+    <h2>Dashboard de <span style="color:var(--sky)">Producción y Consumo</span></h2>
+
+    <div class="section-intro">
+      <p>Visualización integral de la producción y consumo de energía renovable. Filtra por
+         país o región y actualiza las cuatro gráficas.</p>
+    </div>
+
+    <div class="dash-toolbar">
+      <div class="fgroup">
+        <label>Región / País</label>
+        <select id="dashEntity" onchange="updateDashboard()">
+          <option value="World">World (Global)</option>
+        </select>
+      </div>
+      <div class="fgroup" style="margin-top:auto">
+        <button class="btn btn-outline btn-sm" onclick="loadDemoData()">📂 Cargar datos demo</button>
+      </div>
+    </div>
+
+    <div class="charts-grid">
+      <div class="chart-card">
+        <div class="chart-card-header">
+          <h3>📊 Producción por Fuente Renovable</h3>
+          <p>Eólica, solar, hidro, biocomb. y geotérmica — último año disponible</p>
+        </div>
+        <div class="chart-canvas-wrap"><canvas id="chartBar"></canvas></div>
+      </div>
+      <div class="chart-card">
+        <div class="chart-card-header">
+          <h3>🥧 Participación en el Mix Eléctrico</h3>
+          <p>Porcentaje de cada fuente renovable en la electricidad total</p>
+        </div>
+        <div class="chart-canvas-wrap"><canvas id="chartPie"></canvas></div>
+      </div>
+      <div class="chart-card">
+        <div class="chart-card-header">
+          <h3>📈 Tendencia de Capacidad Instalada</h3>
+          <p>Evolución histórica de eólica, solar PV y geotérmica (GW)</p>
+        </div>
+        <div class="chart-canvas-wrap"><canvas id="chartLine"></canvas></div>
+      </div>
+      <div class="chart-card">
+        <div class="chart-card-header">
+          <h3>🌊 Renovable vs Convencional</h3>
+          <p>Comparación del consumo energético a lo largo del tiempo (EJ)</p>
+        </div>
+        <div class="chart-canvas-wrap"><canvas id="chartArea"></canvas></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+
+<!-- ════════════════════════════════════════════
+     RESULTADOS ESPERADOS
+════════════════════════════════════════════ -->
+<section id="resultados">
+  <div class="container">
+    <span class="section-tag">Resultados esperados</span>
+    <h2>¿Qué logramos con este <span style="color:var(--green)">proyecto</span>?</h2>
+
+    <div class="section-intro">
+      <p>EnergiAVerde busca generar impacto tanto en el aprendizaje técnico como en la
+         comprensión ciudadana de la transición energética.</p>
+    </div>
+
+    <div class="results-grid">
+      <div class="result-card"><div class="rc-icon">🌱</div>
+        <h3>Comprensión energética</h3>
+        <p>Cualquier ciudadano puede visualizar el avance global de las energías renovables
+           y entender cuánto falta para una transición completa.</p>
+      </div>
+      <div class="result-card"><div class="rc-icon">📊</div>
+        <h3>Datos accesibles</h3>
+        <p>57 años de historia energética global, navegable, filtrable y exportable desde
+           una interfaz web sin necesidad de instalar nada.</p>
+      </div>
+      <div class="result-card"><div class="rc-icon">🏡</div>
+        <h3>Estimación personal</h3>
+        <p>Cada hogar o comunidad puede estimar qué porcentaje de su electricidad proviene
+           de fuentes renovables, según datos reales del dataset.</p>
+      </div>
+      <div class="result-card"><div class="rc-icon">👩‍💻</div>
+        <h3>Habilidades en programación</h3>
+        <p>Dominio práctico de HTML5, CSS3, JavaScript ES6+ y librerías como Chart.js y
+           PapaParse para construir aplicaciones web reales.</p>
+      </div>
+      <div class="result-card"><div class="rc-icon">🇨🇴</div>
+        <h3>Colombia en el mapa</h3>
+        <p>Visibilizar a Colombia dentro del contexto global de transición energética,
+           destacando su potencial solar, eólico e hídrico.</p>
+      </div>
+      <div class="result-card"><div class="rc-icon">🔬</div>
+        <h3>Pensamiento computacional</h3>
+        <p>Capacidad de descomponer un problema complejo en módulos manejables de código
+           funcional.</p>
+      </div>
+    </div>
+
+    <div class="final-cta">
+      <h3>🚀 Proyecto listo para GitHub</h3>
+      <p>Esta aplicación está lista para ser subida al repositorio de GitHub y entregada
+         en la plataforma Moodle como entregable final del bootcamp.</p>
+      <div class="final-cta-btns">
+        <a href="#portada" class="btn btn-primary">↑ Volver al inicio</a>
+        <a href="https://www.kaggle.com/datasets/belayethossainds/renewable-energy-world-wide-19652022"
+           target="_blank" rel="noopener" class="btn btn-outline">📦 Dataset Kaggle</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════
+     FOOTER
+════════════════════════════════════════════ -->
+<footer>
+  <div class="footer-logo">Energi<span>A</span>Verde</div>
+  <p>Aplicativo web — Transición Energética Justa</p>
+  <p>Bootcamp de Programación · MinTIC Colombia · 2026</p>
+  <div class="footer-links">
+    <a href="https://www.kaggle.com/datasets/belayethossainds/renewable-energy-world-wide-19652022"
+       target="_blank" rel="noopener">Dataset Kaggle</a>
+    <a href="https://www.w3schools.com"       target="_blank" rel="noopener">W3Schools</a>
+    <a href="https://www.chartjs.org"         target="_blank" rel="noopener">Chart.js</a>
+    <a href="https://www.papaparse.com"       target="_blank" rel="noopener">PapaParse</a>
+    <a href="https://ourworldindata.org/renewable-energy" target="_blank" rel="noopener">Our World in Data</a>
+  </div>
+</footer>
+
+
+<!-- ════════════════════════════════════════════
+     LIBRERÍAS CDN (deben ir antes de los scripts)
+════════════════════════════════════════════ -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+
+<!-- ════════════════════════════════════════════
+     SCRIPTS — orden de carga importante:
+     1. datos-globales  → constantes y estado
+     2. controlador     → CHART_BASE, destroyChart
+     3. gráficos        → funciones render*
+     4. tabla           → renderTable, applyFilters
+     5. carga-documentos→ CSV loader, onDataLoaded
+     6. calculadora     → calcular()
+     7. inicio          → selector de energías
+     8. navegador       → nav activa, hamburger
+     9. feedback        → animaciones de entrada
+════════════════════════════════════════════ -->
+<script src="data/datos-globales.js"></script>
+<script src="Dashboard/controlador.js"></script>
+<script src="Dashboard/graficos/grafico-barras/grafico-barras.js"></script>
+<script src="Dashboard/graficos/grafico-torta/grafico-torta.js"></script>
+<script src="Dashboard/graficos/grafico-lineas/grafico-lineas.js"></script>
+<script src="Dashboard/graficos/grafico-area/grafico-area.js"></script>
+<script src="Dashboard/tabla/tabla.js"></script>
+<script src="Dashboard/documentacion/carga-documentos.js"></script>
+<script src="Calculadora/calculadora.js"></script>
+<script src="Inicio/inicio.js"></script>
+<script src="Navegador/navegador.js"></script>
+<script src="Feedback/feedback.js"></script>
+
+</body>
+</html>

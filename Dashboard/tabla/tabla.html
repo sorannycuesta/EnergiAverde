@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<!--
+  tabla.html — EnergiAVerde / Dashboard / tabla
+  Sección Nivel 2: Visualización tabular del dataset CSV
+  Se incluye como fragmento dentro de index.html
+-->
+
+<!-- ════════════════════════════════════════════
+     NIVEL 2 — DATOS (CSV + Tabla)
+════════════════════════════════════════════ -->
+<section id="datos">
+  <div class="container">
+    <span class="section-tag">Nivel 2 — Visualización de datos</span>
+    <h2>Dataset Histórico <span style="color:var(--teal)">Global</span></h2>
+
+    <div class="section-intro">
+      <p>Carga el CSV del dataset de Kaggle o usa los datos de demostración para explorar la tabla interactiva con filtros.</p>
+    </div>
+
+    <div class="notice">
+      <strong>💾 Fuente oficial:</strong> "Renewable Energy World Wide 1965–2022" —
+      <a href="https://www.kaggle.com/datasets/belayethossainds/renewable-energy-world-wide-19652022"
+         target="_blank" rel="noopener">Descargar desde Kaggle</a>
+      · También disponible en la carpeta <code>data/</code> del proyecto.
+    </div>
+
+    <!-- Zona de carga (drag & drop o clic) -->
+    <div class="upload-zone" id="uploadZone">
+      <input type="file" id="csvFile" accept=".csv">
+      <div class="upload-icon">📂</div>
+      <h3>Cargar archivo CSV</h3>
+      <p>Arrastra aquí el archivo o haz clic para seleccionarlo</p>
+      <button class="btn btn-primary btn-sm" id="demoDataBtn"
+              onclick="event.stopPropagation(); loadDemoData()">
+        ✨ Usar datos de demostración
+      </button>
+    </div>
+
+    <!-- Sección de tabla (oculta hasta que se carguen datos) -->
+    <div id="tableSection" style="display:none">
+      <div id="datosLoaded" style="display:none" class="notice">
+        ✅ <strong>Datos cargados.</strong> Puedes filtrar, buscar y exportar la tabla a continuación.
+      </div>
+
+      <!-- Filtros -->
+      <div class="filters-bar">
+        <div class="fgroup">
+          <label>País / Región</label>
+          <select id="filterEntity" onchange="applyFilters()">
+            <option value="">Todos los países</option>
+          </select>
+        </div>
+        <div class="fgroup">
+          <label>Año desde</label>
+          <input type="number" id="filterYearFrom" placeholder="1965"
+                 min="1965" max="2022" style="width:90px" oninput="applyFilters()">
+        </div>
+        <div class="fgroup">
+          <label>Año hasta</label>
+          <input type="number" id="filterYearTo" placeholder="2022"
+                 min="1965" max="2022" style="width:90px" oninput="applyFilters()">
+        </div>
+        <div class="fgroup">
+          <label>Buscar texto</label>
+          <input type="text" id="filterSearch" placeholder="Ej: Colombia"
+                 style="width:150px" oninput="applyFilters()">
+        </div>
+        <div class="fgroup" style="margin-top:auto">
+          <button class="btn btn-outline btn-sm" onclick="applyFilters()">🔍 Filtrar</button>
+        </div>
+      </div>
+
+      <!-- Tabla de datos -->
+      <div class="table-wrap">
+        <table>
+          <thead id="tableHead"></thead>
+          <tbody id="tableBody"></tbody>
+        </table>
+      </div>
+
+      <div class="table-footer">
+        <span id="tableCount"></span>
+        <button class="btn btn-outline btn-sm" onclick="exportCSV()">⬇ Exportar CSV filtrado</button>
+      </div>
+    </div>
+
+  </div>
+</section>

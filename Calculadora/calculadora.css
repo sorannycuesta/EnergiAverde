@@ -1,0 +1,106 @@
+/* ═══════════════════════════════════════════════
+   calculadora.css — EnergiAVerde
+   Estilos del formulario de estimación de energía
+   renovable (Nivel 2)
+═══════════════════════════════════════════════ */
+
+#calculadora { background: var(--bg); }
+
+/* Layout de dos columnas: formulario | resultado */
+.calc-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+@media (max-width: 700px) {
+  .calc-layout { grid-template-columns: 1fr; }
+}
+
+/* Grupos del formulario */
+.form-group { margin-bottom: 1.2rem; }
+.form-group label {
+  display: block;
+  font-size: 0.76rem;
+  color: var(--text-dim);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 0.35rem;
+}
+.form-group input,
+.form-group select { width: 100%; }
+
+/* Panel de resultado */
+.result-panel {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 2rem;
+  text-align: center;
+  min-height: 340px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.result-empty { color: var(--muted); font-size: 0.9rem; }
+
+/* Anillo circular SVG */
+.ring-container {
+  position: relative;
+  width: 140px;
+  height: 140px;
+  margin-bottom: 1rem;
+}
+.ring-container svg { transform: rotate(-90deg); }
+
+.ring-bg   { fill: none; stroke: var(--surface2); stroke-width: 10; }
+.ring-fill {
+  fill: none;
+  stroke-width: 10;
+  stroke-linecap: round;
+  transition: stroke-dashoffset 1s cubic-bezier(.4,0,.2,1), stroke 0.5s;
+}
+
+.ring-center {
+  position: absolute; inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.ring-pct {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: 1.8rem;
+  letter-spacing: -0.05em;
+  line-height: 1;
+}
+.ring-unit     { font-size: 0.7rem; color: var(--muted); }
+.result-summary { color: var(--text-dim); font-size: 0.9rem; margin-bottom: 1.25rem; }
+
+/* Desglose por fuente */
+.breakdown { width: 100%; text-align: left; }
+.breakdown-row {
+  padding: 0.45rem 0;
+  border-bottom: 1px solid var(--border);
+}
+.breakdown-row:last-child { border: none; }
+.breakdown-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.82rem;
+  margin-bottom: 0.2rem;
+}
+.breakdown-bar {
+  height: 4px;
+  background: var(--surface2);
+  border-radius: 2px;
+  overflow: hidden;
+}
+.breakdown-fill {
+  height: 100%;
+  border-radius: 2px;
+  transition: width 0.9s cubic-bezier(.4,0,.2,1);
+}

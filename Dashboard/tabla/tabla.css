@@ -1,0 +1,99 @@
+/* ═══════════════════════════════════════════════
+   tabla.css — EnergiAVerde / Dashboard / tabla
+   Estilos de la zona de carga CSV y la tabla
+   interactiva (Nivel 2)
+═══════════════════════════════════════════════ */
+
+#datos { background: var(--surface); }
+
+/* ── Zona de carga (drag & drop) ── */
+.upload-zone {
+  border: 2px dashed var(--border2);
+  border-radius: var(--radius);
+  padding: 2.5rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.25s;
+  margin-bottom: 1.5rem;
+}
+.upload-zone:hover,
+.upload-zone.drag-over {
+  border-color: var(--green);
+  background: rgba(74,222,128,0.04);
+}
+.upload-zone.loaded {
+  border-color: var(--green);
+  background: rgba(74,222,128,0.04);
+  cursor: default;
+  pointer-events: none;
+}
+.upload-zone input[type="file"] { display: none; }
+.upload-icon   { font-size: 2.5rem; margin-bottom: 0.75rem; }
+.upload-zone h3 { color: var(--text); font-size: 1.05rem; margin-bottom: 0.3rem; }
+.upload-zone p  { font-size: 0.86rem; margin-bottom: 1rem; }
+
+/* ── Barra de filtros ── */
+.filters-bar {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+  flex-wrap: wrap;
+  align-items: flex-end;
+}
+.fgroup { display: flex; flex-direction: column; gap: 0.25rem; }
+.fgroup label {
+  font-size: 0.72rem;
+  color: var(--muted);
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+/* ── Tabla de datos ── */
+.table-wrap {
+  overflow-x: auto;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  max-height: 420px;
+  overflow-y: auto;
+}
+table { width: 100%; border-collapse: collapse; font-size: 0.82rem; }
+
+thead th {
+  background: var(--surface2);
+  color: var(--text-dim);
+  padding: 0.7rem 1rem;
+  text-align: left;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--border2);
+  position: sticky;
+  top: 0;
+  white-space: nowrap;
+}
+
+tbody tr {
+  border-bottom: 1px solid rgba(30,46,30,0.4);
+  transition: background 0.12s;
+}
+tbody tr:hover { background: rgba(74,222,128,0.035); }
+tbody td {
+  padding: 0.6rem 1rem;
+  color: var(--text-dim);
+  white-space: nowrap;
+}
+tbody td:first-child,
+tbody td:nth-child(2) { color: var(--text); font-weight: 500; }
+
+/* ── Pie de tabla ── */
+.table-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0.75rem;
+  font-size: 0.78rem;
+  color: var(--muted);
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
